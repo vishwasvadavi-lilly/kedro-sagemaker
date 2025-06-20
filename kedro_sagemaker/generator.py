@@ -193,7 +193,7 @@ class KedroSageMakerGenerator:
                     sm_node_name,
                     sm_param_envs,
                     sm_training_steps_with_model_outputs,
-                    tags=tags,
+                    tags=self.tags,
                 )
 
                 assert (
