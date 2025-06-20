@@ -277,6 +277,7 @@ class KedroSageMakerGenerator:
         sm_param_envs,
         entrypoint=None,
     ):
+        print(f"Creating Processor with tags: {self.tags}")
         step = ProcessingStep(
             sm_node_name,
             processor=Processor(
