@@ -193,7 +193,7 @@ class KedroSageMakerGenerator:
                     sm_node_name,
                     sm_param_envs,
                     sm_training_steps_with_model_outputs,
-                    tags=self.tags,
+
                 )
 
                 assert (
@@ -301,6 +301,7 @@ class KedroSageMakerGenerator:
             display_name=node.name,
             description=node.name,
         )
+        step.arguments["Tags"] = [{"Key": "ProjectId", "Value": "087ef359ee5651c141c589a6c7abb3"}]
         return step
 
     def _get_kedro_command(self, node, as_string=False) -> Union[str, List[str]]:
@@ -376,7 +377,6 @@ class KedroSageMakerGenerator:
         sm_node_name,
         sm_param_envs,
         sm_training_steps_with_model_outputs,
-        tags=None,
     ):
         return TrainingStep(
             sm_node_name,
