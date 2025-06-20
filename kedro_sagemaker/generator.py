@@ -229,6 +229,7 @@ class KedroSageMakerGenerator:
             sagemaker_session=sagemaker_session,
             steps=list(steps.values()),
             parameters=sm_params,
+            tags=[{"Key": "ProjectId", "Value": "087ef359ee5651c141c589a6c7abb3"}],
         )
         return smp
 
