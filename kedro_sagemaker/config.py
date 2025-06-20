@@ -46,6 +46,9 @@ aws:
 
   # AWS SageMaker Executor role ARN
   execution_role: "{execution_role}"
+  tags:
+    - Key: ProjectId
+      Value: 087ef359ee5651c141c589a6c7abb3
 
   # use Kedro node tags (recommended) or node names to assign compute resources
   # use __default__ to specify the default values (for all nodes)
