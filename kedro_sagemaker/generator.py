@@ -62,6 +62,7 @@ class KedroSageMakerGenerator:
         self.kedro_context = kedro_context
         self.pipeline_name = pipeline_name
         self.execution_role_arn = execution_role_arn
+        self.tags = [{"Key": "ProjectId", "Value": "087ef359ee5651c141c589a6c7abb3"}]
 
     @property
     def _execution_role(self):
@@ -192,6 +193,7 @@ class KedroSageMakerGenerator:
                     sm_node_name,
                     sm_param_envs,
                     sm_training_steps_with_model_outputs,
+                    tags=tags,
                 )
 
                 assert (
@@ -293,6 +295,7 @@ class KedroSageMakerGenerator:
                     security_group_ids=node_resources.security_group_ids,
                     subnets=node_resources.subnets,
                 ),
+                tags=self.tags,
             ),
             display_name=node.name,
             description=node.name,
@@ -402,6 +405,7 @@ class KedroSageMakerGenerator:
                 else None,
                 security_group_ids=node_resources.security_group_ids,
                 subnets=node_resources.subnets,
+                tags=self.tags,
             ),
             display_name=node.name,
             description=node.name,
